@@ -33,10 +33,21 @@ const getInfo = async() => {
             const imageRickMortyCharacter = document.createElement("img");
             imageRickMortyCharacter.className = "characterRickMortyImg";
             imageRickMortyCharacter.src = `${urlBaseRaM}/avatar/${indexFoundName + 1}.jpeg`;
+            
             //Add cards
             mainContainer.append(card);
             card.append(imageRickMortyCharacter);
             console.log(foundName);
+
+            const listInfo = document.createElement("ul"); //list with information
+            card.append(listInfo);
+            const listInfoElements = []; 
+            
+            for(let i = 0; i < 3; i++ ){
+                const li = document.createElement("li");
+                listInfoElements.push(li);
+            }
+            listInfo.append(...listInfoElements);
             }
 
             const input = document.getElementById("NameInput");

@@ -2,7 +2,7 @@ let urlBaseRaM = "https://rickandmortyapi.com/api/character/";
 
 const getInfo = async() => {
     try{
-        //Get gata from API 
+        //Get data from API 
         const responseRickMorty = await fetch(urlBaseRaM);
         const dataRaM = await responseRickMorty.json();
         const generalArrayRickMorty = Object.entries(dataRaM.results);

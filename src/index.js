@@ -42,12 +42,16 @@ const getInfo = async() => {
             const listInfo = document.createElement("ul"); //list with information
             card.append(listInfo);
             const listInfoElements = []; 
+            const textInfo = [];
             
             for(let i = 0; i < 3; i++ ){
                 const li = document.createElement("li");
                 listInfoElements.push(li);
+                const text = document.createTextNode("sfjgdffhg");
+                li.append(text);
             }
             listInfo.append(...listInfoElements);
+            
             }
 
             const input = document.getElementById("NameInput");

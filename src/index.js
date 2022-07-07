@@ -23,17 +23,6 @@ const getInfo = async() => {
             arrayRickMortySpecies.push(arrayRickMorty[i][3][1]);   
         }
 
-        /*const text = document.createTextNode("sfjgdffhg");
-        mainContainer.append(text);
-
-        const fillingList = () => {
-            for (let i = 0; i < arrayRickMortyNames.length; i ++) {
-                const text = document.createTextNode(arrayRickMortyNames[i]);
-                mainContainer.append(text);
-            }
-        }
-        fillingList();*/
-
         const validacion = () => {
             const foundName = arrayRickMortyNames.find(i => i == input.value);
             const indexFoundName = arrayRickMortyNames.findIndex(i => i == input.value);

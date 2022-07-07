@@ -23,6 +23,17 @@ const getInfo = async() => {
             arrayRickMortySpecies.push(arrayRickMorty[i][3][1]);   
         }
 
+        /*const text = document.createTextNode("sfjgdffhg");
+        mainContainer.append(text);
+
+        const fillingList = () => {
+            for (let i = 0; i < arrayRickMortyNames.length; i ++) {
+                const text = document.createTextNode(arrayRickMortyNames[i]);
+                mainContainer.append(text);
+            }
+        }
+        fillingList();*/
+
         const validacion = () => {
             const foundName = arrayRickMortyNames.find(i => i == input.value);
             const indexFoundName = arrayRickMortyNames.findIndex(i => i == input.value);
@@ -41,17 +52,42 @@ const getInfo = async() => {
 
             const listInfo = document.createElement("ul"); //list with information
             card.append(listInfo);
-            const listInfoElements = []; 
-            const textInfo = [];
+
+            const li1 = document.createElement("li");
+            listInfo.append(li1);
+            for (let i = 0; i < arrayRickMortyNames.length; i++) {
+                if(indexFoundName === i + 1){
+                    const text = document.createTextNode("Name: " + arrayRickMortyNames[i + 1]);
+                    li1.append(text);
+                }
+            }
+
+            const li2 = document.createElement("li");
+            listInfo.append(li2);
+            for (let i = 0; i < arrayRickMortySpecies.length; i++) {
+                if(indexFoundName === i + 1){
+                    const text = document.createTextNode("Species: " + arrayRickMortySpecies[i + 1]);
+                    li2.append(text);
+                }
+            }
+
+            const li3 = document.createElement("li");
+            listInfo.append(li3);
+            for (let i = 0; i < arrayRickMortyTypes.length; i++) {
+                if(indexFoundName === i + 1){
+                    const text = document.createTextNode("Types: " + arrayRickMortyTypes[i + 1]);
+                    li3.append(text);
+                }
+            }
+
+            /*const listInfoElements = []; 
             
             for(let i = 0; i < 3; i++ ){
                 const li = document.createElement("li");
                 listInfoElements.push(li);
-                const text = document.createTextNode("sfjgdffhg");
-                li.append(text);
             }
-            listInfo.append(...listInfoElements);
-            
+            listInfo.append(...listInfoElements);*/
+
             }
 
             const input = document.getElementById("NameInput");

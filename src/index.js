@@ -42,33 +42,21 @@ const getInfo = async() => {
             const listInfo = document.createElement("ul"); //list with information
             card.append(listInfo);
 
-            const li1 = document.createElement("li");
-            listInfo.append(li1);
-            for (let i = 0; i < arrayRickMortyNames.length; i++) {
-                if(indexFoundName === i + 1){
-                    const text = document.createTextNode("Name: " + arrayRickMortyNames[i + 1]);
-                    li1.append(text);
-                }
-            }
+            const funcion = (array) => {
+                const li = document.createElement("li");
+                listInfo.append(li1);
 
-            const li2 = document.createElement("li");
-            listInfo.append(li2);
-            for (let i = 0; i < arrayRickMortySpecies.length; i++) {
-                if(indexFoundName === i + 1){
-                    const text = document.createTextNode("Species: " + arrayRickMortySpecies[i + 1]);
-                    li2.append(text);
+                for (let i = 0; i < array.length; i++) {
+                    if(indexFoundName === i + 1){
+                        const text = document.createTextNode("Name: " + arrayRickMortyNames[i + 1]);
+                        li.append(text);
+                        }
+                    }
                 }
-            }
-
-            const li3 = document.createElement("li");
-            listInfo.append(li3);
-            for (let i = 0; i < arrayRickMortyTypes.length; i++) {
-                if(indexFoundName === i + 1){
-                    const text = document.createTextNode("Types: " + arrayRickMortyTypes[i + 1]);
-                    li3.append(text);
-                }
-            }
-
+                
+            }    
+            
+            
             /*const listInfoElements = []; 
             
             for(let i = 0; i < 3; i++ ){

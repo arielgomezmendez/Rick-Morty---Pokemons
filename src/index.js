@@ -43,6 +43,8 @@ const getInfo = async() => {
             card.append(listInfo);
 
             const listInfoElements = []; 
+            const arrayInfo = [];
+            
             
             for(let i = 0; i < 3; i++ ){
                 const li = document.createElement("li");

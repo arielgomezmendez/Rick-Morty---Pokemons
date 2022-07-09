@@ -22,13 +22,13 @@ const getInfo = async() => {
             arrayRickMortyTypes.push(arrayRickMorty[i][4][1]);
             arrayRickMortySpecies.push(arrayRickMorty[i][3][1]);   
         }
-        console.log(arrayRickMortyNames, arrayRickMortySpecies, arrayRickMortyTypes);
 
         const validacion = () => {
             const foundName = arrayRickMortyNames.find(i => i == input.value);
             const indexFoundName = arrayRickMortyNames.findIndex(i => i == input.value);
 
-            //Create cards of Rick and Morty
+            if(indexFoundName != -1){
+                //Create cards of Rick and Morty
             const card = document.createElement('article');
             card.className = "rickMortyCard";
             const imageRickMortyCharacter = document.createElement("img");
@@ -57,7 +57,11 @@ const getInfo = async() => {
             //Calling the function
             addLiElement(arrayRickMortyNames, "Name: ");
             addLiElement(arrayRickMortySpecies, "Species: ");
-            addLiElement(arrayRickMortyTypes, "Types: ");
+            addLiElement(arrayRickMortyTypes, "Type: ");
+            }
+            else{
+                alert("Introduzca el nombre correctamente");
+            }
     
             }
 

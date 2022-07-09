@@ -22,6 +22,7 @@ const getInfo = async() => {
             arrayRickMortyTypes.push(arrayRickMorty[i][4][1]);
             arrayRickMortySpecies.push(arrayRickMorty[i][3][1]);   
         }
+        console.log(arrayRickMortyNames, arrayRickMortySpecies, arrayRickMortyTypes);
 
         const validacion = () => {
             const foundName = arrayRickMortyNames.find(i => i == input.value);
@@ -42,29 +43,22 @@ const getInfo = async() => {
             const listInfo = document.createElement("ul"); //list with information
             card.append(listInfo);
 
-            const funcion = (array) => {
+            //Function to craate the li elements of list ul(with character information)
+            const addLiElement = (array, characterSettings) => {
                 const li = document.createElement("li");
-                listInfo.append(li1);
-
+                listInfo.append(li);
                 for (let i = 0; i < array.length; i++) {
                     if(indexFoundName === i + 1){
-                        const text = document.createTextNode("Name: " + arrayRickMortyNames[i + 1]);
-                        li.append(text);
-                        }
+                        const setting = document.createTextNode(characterSettings + array[i + 1]);
+                        li.append(setting);
                     }
-                }
-                
-            }    
-            
-            
-            /*const listInfoElements = []; 
-            
-            for(let i = 0; i < 3; i++ ){
-                const li = document.createElement("li");
-                listInfoElements.push(li);
+                }   
             }
-            listInfo.append(...listInfoElements);*/
-
+            //Calling the function
+            addLiElement(arrayRickMortyNames, "Name: ");
+            addLiElement(arrayRickMortySpecies, "Species: ");
+            addLiElement(arrayRickMortyTypes, "Types: ");
+    
             }
 
             const input = document.getElementById("NameInput");

@@ -39,7 +39,6 @@ const getInfoRaM = async() => {
             //Add cards
             mainContainer.append(card);
             card.append(imageRickMortyCharacter);
-            console.log(foundName);
 
             const listInfo = document.createElement("ul"); //list with information
             card.append(listInfo);
@@ -60,13 +59,36 @@ const getInfoRaM = async() => {
             addLiElement(arrayRickMortySpecies, "Species: ");
             addLiElement(arrayRickMortyTypes, "Type: ");
             }
-
+            //If does not found the name of Rick and Morty character
             else if (indexFoundName === -1){
                 const getInfoPokemons = async() => {
                     try {
                         const responsePokemons = await fetch(urlBasePokemons);
                         const dataPokemons = await responsePokemons.json();
-                        console.log(dataPokemons.results);
+                        
+                        const generalArrayPokemons = Object.entries(dataPokemons.results);
+                        console.log(generalArrayPokemons);
+                        
+                        const arrayPokemons = [];
+                        const arrayPokemonsNames = [];  // names array
+                        
+                        for(let i = 0; i < generalArrayPokemons.length; i ++){
+                            arrayPokemons.push(Object.entries(generalArrayPokemons[i][1]));
+                            //Filling arrays
+                            arrayPokemonsNames.push(arrayPokemons[i][0][1]); 
+                        }
+
+                        const foundPokemonName = arrayPokemonsNames.find(i => i = input.value);
+                        const foundPokemonIndex = arrayPokemonsNames.findIndex(i => i = input.value);
+
+                        if (foundPokemonIndex != -1){
+                            console.log(foundPokemonName);
+                        }
+                        else{
+                            alert("Escriba el nombre del personaje correctamente");
+                        }
+                        
+
                     }
                     catch(error){
                         console.log(error);

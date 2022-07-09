@@ -1,6 +1,7 @@
 let urlBaseRaM = "https://rickandmortyapi.com/api/character/";
+let urlBasePokemons = "https://pokeapi.co/api/v2/pokemon/";
 
-const getInfo = async() => {
+const getInfoRaM = async() => {
     try{
         //Get data from API 
         const responseRickMorty = await fetch(urlBaseRaM);
@@ -28,7 +29,7 @@ const getInfo = async() => {
             const indexFoundName = arrayRickMortyNames.findIndex(i => i == input.value);
 
             if(indexFoundName != -1){
-                //Create cards of Rick and Morty
+            //Create cards of Rick and Morty
             const card = document.createElement('article');
             card.className = "rickMortyCard";
             const imageRickMortyCharacter = document.createElement("img");
@@ -59,20 +60,32 @@ const getInfo = async() => {
             addLiElement(arrayRickMortySpecies, "Species: ");
             addLiElement(arrayRickMortyTypes, "Type: ");
             }
-            else{
-                alert("Introduzca el nombre correctamente");
+
+            else if (indexFoundName === -1){
+                const getInfoPokemons = async() => {
+                    try {
+                        const responsePokemons = await fetch(urlBasePokemons);
+                        const dataPokemons = await responsePokemons.json();
+                        console.log(dataPokemons.results);
+                    }
+                    catch(error){
+                        console.log(error);
+                    }
+                }
+                getInfoPokemons();
             }
+            
     
-            }
+        }
 
             const input = document.getElementById("NameInput");
             const buttom = document.getElementById('Btn');
             buttom.addEventListener("click", validacion);
-        }
+    }
 
     catch(error){
         console.log(error);
     }
 }
 
-getInfo();
+getInfoRaM();

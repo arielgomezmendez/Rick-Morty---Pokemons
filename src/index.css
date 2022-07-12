@@ -1,3 +1,68 @@
 @import 'tailwindcss/dist/base.css';
 @import 'tailwindcss/dist/components.css';
 @import 'tailwindcss/dist/utilities.css';
+
+
+body{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,auto);
+    grid-template-areas: "header header header"
+                        "main main main"
+                        "main main main"
+                        "main main main"
+                        "footer footer footer";
+}
+
+header{
+    background-color: aqua;
+    grid-area: header;
+}
+
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: "Section-1 Section-1 Section-1"
+                         "Section-2 Section-2 Section-2";
+}
+
+#Section-1{
+    background-color: rgb(91, 151, 118);
+    grid-area: Section-1;
+}
+
+#Section-2{
+    background-color: rgb(247, 247, 176);
+    grid-area: Section-2;
+}
+form{
+    width: 50%;
+    height: 30%;
+    margin: 0 auto;
+}
+label{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#Slider{
+    display: flex;
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity; 
+    background-color: rgb(250, 175, 175);
+}
+.cardRaMPokemons{
+    position: relative;
+    scroll-snap-align: center;
+}
+footer{
+    background-color: rgb(221, 194, 247);
+    grid-area: footer;
+}

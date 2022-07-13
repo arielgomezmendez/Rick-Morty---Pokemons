@@ -28,15 +28,20 @@ main{
     grid-area: main;
     display: grid;
     
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,auto);
-    grid-template-areas: "Section-1 Section-1 Section-1"
-                         "Section-2 Section-2 Section-2";
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "Section-1 Section-1 Section-1 Section-1 "
+                         "Section-1 Section-1 Section-1 Section-1 "
+                         "Section-2 Section-2 Section-2 Section-2"
+                         "Section-2 Section-2 Section-2 Section-2";;
 }
 
 #Section-1{
-    background-color: rgb(91, 151, 118);
+    background-image: url(./rick\ +\ pikachu\ \(2\).jfif);
     grid-area: Section-1;
+    background-size: contain;
+    
+    
 }
 
 #Section-2{

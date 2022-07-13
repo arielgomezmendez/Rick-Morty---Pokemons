@@ -34,7 +34,7 @@ const getInfoRaM = async() => {
             const card = document.createElement('article');
             card.className = "cardRaMPokemons";
             const imageRickMortyCharacter = document.createElement("img");
-            imageRickMortyCharacter.className = "characterRickMortyImg";
+            imageRickMortyCharacter.className = "image";
             imageRickMortyCharacter.src = `${urlBaseRaM}/avatar/${indexFoundName + 1}.jpeg`;
             
             //Add cards
@@ -89,6 +89,7 @@ const getInfoRaM = async() => {
                             slider.append(pokemonCard);
                             //Add image of pokemon
                             const pokemonImg = document.createElement("img");
+                            pokemonImg.className = "image ";
                             pokemonCard.append(pokemonImg);
                             pokemonImg.src = `${urlPokemonImg}/${foundPokemonIndex + 1}.png`;
                             

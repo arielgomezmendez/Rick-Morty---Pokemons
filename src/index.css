@@ -2,12 +2,18 @@
 @import 'tailwindcss/dist/components.css';
 @import 'tailwindcss/dist/utilities.css';
 
+html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(5,auto);
+    grid-template-rows: repeat(6,auto);
     grid-template-areas: "header header header"
+                        "main main main"
                         "main main main"
                         "main main main"
                         "main main main"
@@ -15,15 +21,15 @@ body{
 }
 
 header{
-    background-color: aqua;
     grid-area: header;
 }
 
 main{
     grid-area: main;
     display: grid;
+    
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: repeat(2,auto);
     grid-template-areas: "Section-1 Section-1 Section-1"
                          "Section-2 Section-2 Section-2";
 }
@@ -34,35 +40,76 @@ main{
 }
 
 #Section-2{
-    background-color: rgb(247, 247, 176);
     grid-area: Section-2;
 }
 form{
-    width: 50%;
-    height: 30%;
+    width: 60%;
+    height: 28%; 
+    display: flex; 
+    flex-direction: row;
     margin: 0 auto;
-}
-label{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    padding-top: 20px;
 }
 
+#NameInput{
+    border: 1.2px rgb(44, 44, 44) solid;
+    border-radius: 8px;
+    height: 46px;
+    max-width: 50%;
+    min-width: 50%;   
+}
+#Btn{
+    margin-top: 0;
+    border-radius: 8px;
+    height: 46px;
+    max-width: 20%;
+    min-width: 20%;
+    margin-left: 2%;
+}
 
 #Slider{
+    border-top: 2px solid rgb(179, 224, 241);
     display: flex;
-    height: 316px;
+    height: 280px;
     overflow-x: scroll;
     overscroll-behavior-x: contain;
     scroll-snap-type: x proximity; 
-    background-color: rgb(250, 175, 175);
+
 }
 .cardRaMPokemons{
     position: relative;
     scroll-snap-align: center;
+    display: flex;
+    align-content: center;
+    background-color: rgb(135, 193, 245);
+    height: 80%;
+    min-width: 34%;
+    margin: 20px;
+    box-shadow: 6px 6px 6px gray;
+    border-radius: 10px;
+    
+}
+
+.image{
+   
+    min-width: 200px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;  
+}
+ul{
+    height: 40%;
+    margin-top: 60px;
+    margin-left: 26px;
+}
+
+#Btn-clean{
+    border-radius: 8px;
+    height: 46px;
+    min-width: 12%;
+    position: relative;
+    left: 40%;
 }
 footer{
-    background-color: rgb(221, 194, 247);
+    margin-top: 100px;
     grid-area: footer;
 }

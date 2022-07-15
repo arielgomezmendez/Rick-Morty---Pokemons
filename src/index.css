@@ -28,52 +28,81 @@ main{
     grid-area: main;
     display: grid;
     
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: "Section-1 Section-1 Section-1 Section-1 "
-                         "Section-1 Section-1 Section-1 Section-1 "
-                         "Section-2 Section-2 Section-2 Section-2"
-                         "Section-2 Section-2 Section-2 Section-2";;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,300px);
+    grid-template-areas: "Section-1 Section-1"
+                         "Section-1 Section-1"
+                         "Section-2 Section-2"
+                         "Section-2 Section-2";
 }
 
 #Section-1{
-    background-image: url(./rick\ +\ pikachu\ \(2\).jfif);
     grid-area: Section-1;
-    background-size: contain;
-    
-    
+    margin-top: 30px;
+    background-color: rgb(191, 216, 216);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+   
+}
+#Section-1 p {
+    margin-top: 30px;
+    width: 40%;
+    height: 40%;
+}
+picture{
+    width: 20%;
+    min-height: 20%;
 }
 
 #Section-2{
     grid-area: Section-2;
+    display: flex;
+    flex-direction: column;
 }
 form{
     width: 60%;
-    height: 28%; 
+    height: 40%; 
     display: flex; 
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
-    padding-top: 20px;
+
 }
 
 #NameInput{
-    border: 1.2px rgb(44, 44, 44) solid;
+    border: 1.2px rgb(6, 19, 197) solid;
     border-radius: 8px;
     height: 46px;
-    max-width: 50%;
-    min-width: 50%;   
+    min-width: 50% ;
+    
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    min-width: 50%; 
+    justify-content: center;
+    color: rgb(61, 61, 61);
 }
 #Btn{
-    margin-top: 0;
     border-radius: 8px;
     height: 46px;
-    max-width: 20%;
-    min-width: 20%;
-    margin-left: 2%;
+    min-width: 54%; 
+}
+
+#Btn-clean{
+    border-radius: 8px;
+    height: 46px;
+    min-width: 30%;
+    margin-left: 20px;
+
+    
 }
 
 #Slider{
-    border-top: 2px solid rgb(179, 224, 241);
     display: flex;
     height: 280px;
     overflow-x: scroll;
@@ -107,13 +136,7 @@ ul{
     margin-left: 26px;
 }
 
-#Btn-clean{
-    border-radius: 8px;
-    height: 46px;
-    min-width: 12%;
-    position: relative;
-    left: 40%;
-}
+
 footer{
     margin-top: 100px;
     grid-area: footer;

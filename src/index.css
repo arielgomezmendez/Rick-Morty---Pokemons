@@ -25,6 +25,7 @@ header{
     justify-content: center;
 }
 
+
 main{
     grid-area: main;
     display: grid;
@@ -116,10 +117,11 @@ form{
     position: relative;
     scroll-snap-align: center;
     display: flex;
-    background-color: rgb(135, 193, 245);
-    box-shadow: 6px 6px 6px gray;
+    background-color: rgb(221, 225, 228);
+    box-shadow: 5px 5px 5px rgb(202, 200, 200);
     border-radius: 10px; 
-    margin-left: 10px;   
+    margin-left: 20px;
+    height: 96%;   
 }
 
 .image{ 

@@ -1,0 +1,64 @@
+@media screen and (min-width: 900px) {
+    #Section-1{
+        display: grid;
+        margin-left: 45px;
+        grid-template-columns: repeat(3, 400px);
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: "picture-1 p picture-2"
+                             ".        form         .";
+                             
+    }
+    header h1 {
+        margin: 0 auto;
+    }
+
+    .picture-1{
+        grid-area: picture-1;
+        margin-left: 40px;
+    } 
+    .picture-2{
+        grid-area: picture-2;
+
+    } 
+    p{
+        grid-area: p;
+        font-size: 20px;
+        margin-top: 160px;
+        min-width: 420px;   
+       
+    }
+    form{
+        grid-area: form;
+        width: 90%;    
+    }
+    
+    #NameInput{
+        height: 46px;   
+    }
+    #Btn{
+        height: 46px;
+        min-width: 54%; 
+    }
+    
+    #Btn-clean{
+        border-radius: 8px;
+        height: 46px;
+        min-width: 30%;
+        margin-left: 20px;   
+    }
+    
+    
+    #Section-2{
+        margin-top: 60px;
+    }
+    #Slider{
+        height: 260px; 
+    }
+    .cardRaMPokemons{
+        width: 400px;   
+    }
+    ul{
+        width: 190px;
+    }
+    
+  }

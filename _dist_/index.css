@@ -1,0 +1,140 @@
+@import "../_snowpack/pkg/tailwindcss/dist/base.css";
+@import "../_snowpack/pkg/tailwindcss/dist/components.css";
+@import "../_snowpack/pkg/tailwindcss/dist/utilities.css";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,auto);
+    grid-template-areas: "header header header"
+                        "main main main"
+                        "main main main"
+                        "main main main";
+}
+
+header{
+    margin-top: 30px;
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+}
+
+
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas: "Section-1 Section-1"
+                         "Section-1 Section-1"
+                         "Section-2 Section-2"
+                         "Section-2 Section-2";
+}
+
+#Section-1{
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "picture-1 . picture-2"
+                         "p         p        p "
+                         "form         form     form";
+}
+.picture-1{
+    grid-area: picture-1;
+    margin: 10px;
+    margin-top:40px ;
+} 
+.picture-2{
+    grid-area: picture-2;
+    margin: 10px;
+    margin-top:40px ;
+} 
+p{
+    grid-area: p;
+    padding: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(51, 105, 255);
+}
+form{
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 70%;
+    
+}
+/*Input*/
+#NameInput{
+    border: 1.2px rgb(6, 19, 197) solid;
+    border-radius: 8px;
+    height: 32px;   
+}
+/*Buttons*/
+.buttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    min-width: 30%; 
+    justify-content: center;
+    color: rgb(61, 61, 61);
+}
+#Btn{
+    border-radius: 8px;
+    height: 32px;
+    min-width: 54%; 
+}
+
+#Btn-clean{
+    border-radius: 8px;
+    height: 32px;
+    min-width: 30%;
+    margin-left: 20px;   
+}
+/*Section 2*/
+#Section-2{
+    grid-area: Section-2;
+    display: flex;
+    flex-direction: column;
+}
+/*Create slide*/
+#Slider{
+    display: flex;
+    height: 200px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    margin-bottom: 50px;
+}
+
+.cardRaMPokemons{
+    position: relative;
+    scroll-snap-align: center;
+    display: flex;
+    background-color: rgb(158, 184, 255);
+    box-shadow: 5px 5px 5px rgb(202, 200, 200);
+    border-radius: 10px; 
+    margin-left: 20px;
+    height: 96%;
+    min-width: 380px;   
+}
+
+.image{ 
+    min-width: 140px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+}
+
+ul{
+    height: 100%;
+    width: 120px;
+    padding-top: 40px;
+    padding-left: 20px;   
+}
